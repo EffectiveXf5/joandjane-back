@@ -1,15 +1,22 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ActivitiesService } from './activity.service';
+import { ActivityService } from './activity.service';
+import { ActivityController } from './activity.controller';
 
 describe('ActivitiesService', () => {
-  let service: ActivitiesService;
+  let service: ActivityService;
+
+  const mockActivityController = {}
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [ActivitiesService],
-    }).compile();
+      controllers: [ActivityController],
+      providers: [ActivityService],
+    })
+      .overrideProvider(ActivityController)
+      .useValue(mockActivityController)
+      .compile();
 
-    service = module.get<ActivitiesService>(ActivitiesService);
+    service = module.get<ActivityService>(ActivityService);
   });
 
   it('should be defined', () => {

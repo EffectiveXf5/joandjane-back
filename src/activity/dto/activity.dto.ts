@@ -33,5 +33,5 @@ export class ActivityDTO {
 
     readonly children: boolean;
 
-    readonly reatedAt: Date;
+    readonly createdAt: Date;
 }
