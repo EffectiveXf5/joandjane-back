@@ -1,6 +1,6 @@
 import { Document } from "mongoose"
 
-export interface Activity extends Document{
+export interface Activity extends Document {
 
     readonly title: string;
 
@@ -33,4 +33,6 @@ export interface Activity extends Document{
     readonly reviews: object;
 
     readonly children: boolean;
+
+    readonly reatedAt: Date;
 }

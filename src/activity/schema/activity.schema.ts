@@ -52,6 +52,9 @@ export class Activity {
     
     @Prop()
     children: boolean;
+
+    @Prop( { default: Date.now })
+    createdAt: Date;
 };
 
 export const ActivitySchema = SchemaFactory.createForClass(Activity);

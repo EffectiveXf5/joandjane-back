@@ -1,5 +1,5 @@
 
-export class ActivityDTO{
+export class ActivityDTO {
 
     readonly title: string;
 
@@ -32,4 +32,6 @@ export class ActivityDTO{
     readonly reviews: object;
 
     readonly children: boolean;
+
+    readonly reatedAt: Date;
 }
