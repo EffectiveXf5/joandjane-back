@@ -47,7 +47,7 @@ export class Activity {
     @Prop()
     location: string[];
     
-    @Prop()
+    @Prop( { type: Object } )
     reviews: object;
     
     @Prop()
