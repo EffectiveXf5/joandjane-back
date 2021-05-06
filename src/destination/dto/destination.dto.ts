@@ -2,7 +2,7 @@ export class DestinationDTO {
 
     readonly title: string;
 
-    readonly img: number;
+    readonly img: string;
 
     readonly numberOfActivities: string;
 
