@@ -3,10 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import { ActivitiesModule } from './activity/activity.module';
+import { DestinationController } from './destination/destination.controller';
+import { DestinationModule } from './destination/destination.module';
 
 @Module({
-  imports: [DatabaseModule, ActivitiesModule],
-  controllers: [AppController],
+  imports: [DatabaseModule, ActivitiesModule, DestinationModule],
+  controllers: [AppController, DestinationController],
   providers: [AppService],
 })
 export class AppModule {}
