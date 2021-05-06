@@ -18,9 +18,9 @@ export class DestinationService {
         return oneDestination;
     }
 
-    createNewDestination(destinationDTO: DestinationDTO): Promise<Destination> {
-        const newDestination = new this.destinationModel(destinationDTO);
-        return newDestination.save();
+    async createNewDestination(destinationDTO: DestinationDTO): Promise<Destination> {
+        const newDestination = await this.destinationModel.create(destinationDTO);
+        return newDestination;
     }
 
     async updateNewDestination(destinationID: string, destinationDTO: DestinationDTO): Promise<Destination> {
