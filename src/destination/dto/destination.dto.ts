@@ -4,7 +4,7 @@ export class DestinationDTO {
 
     readonly img: number;
 
-    readonly numberOfActivities: string[];
+    readonly numberOfActivities: string;
 
-    readonly reatedAt: Date;
+    readonly createdAt: Date;
 }

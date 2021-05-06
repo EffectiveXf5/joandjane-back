@@ -15,21 +15,21 @@ export class DestinationController {
 
     @Get('/:destinationID')
     async getOneDestination(@Param('destinationID') destinationID): Promise<Destination> {
-        return await this.getOneDestination(destinationID);
+        return await this.destinationService.getOneDestination(destinationID);
     }
 
     @Post('/create-destination')
-    async createOneDestination(@Body() destinationDTO: DestinationDTO): Promise<Destination> {
-        return await this.createOneDestination(destinationDTO);
+    createOneDestination(@Body() destinationDTO: DestinationDTO): Promise<Destination> {
+        return this.destinationService.createNewDestination(destinationDTO);
     }
 
     @Put('/update-destination/:destinationID')
     async updateDestination(@Body() destinationDTO: DestinationDTO, @Param('destinationID') destinationID): Promise<Destination> {
-        return await this.updateDestination(destinationID, destinationDTO);
+        return await this.destinationService.updateNewDestination(destinationID, destinationDTO);
     }
 
     @Delete('/delete-destination/:destinationID')
     async deleteOneDestination(@Param('destinationID') destinationID): Promise<Destination> {
-        return await this.deleteOneDestination(destinationID);
+        return await this.destinationService.deleteDestination(destinationID);
     }
 }

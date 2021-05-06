@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ActivityController } from 'src/activity/activity.controller';
 import { DestinationService } from './destination.service';
 import { DestinationSchema } from './schema/destination.schema';
+import { DestinationController } from './destination.controller';
 
 @Module({
   imports : [
@@ -11,6 +11,6 @@ import { DestinationSchema } from './schema/destination.schema';
     ])
   ],
   providers: [DestinationService],
-  controllers: [ActivityController]
+  controllers: [DestinationController]
 })
 export class DestinationModule {}

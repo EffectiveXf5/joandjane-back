@@ -8,7 +8,7 @@ import { DestinationModule } from './destination/destination.module';
 
 @Module({
   imports: [DatabaseModule, ActivitiesModule, DestinationModule],
-  controllers: [AppController, DestinationController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}

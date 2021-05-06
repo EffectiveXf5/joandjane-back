@@ -19,8 +19,8 @@ export class ActivityService {
     }
 
     createNewActivity(activityDTO: ActivityDTO): Promise<Activity> {
-        const newActivity = new this.activityModel(activityDTO);
-        return newActivity.save();
+        const newActivity = this.activityModel.create(activityDTO);
+        return newActivity;
     }
 
     async updateOneActivity(activityID: string, activityDTO: ActivityDTO): Promise<Activity> {
