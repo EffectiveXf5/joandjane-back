@@ -1,4 +1,3 @@
-import { Body, Controller, Delete, Get, HttpStatus, NotFoundException, Param, Post, Put, Res } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { ActivityController } from './activity.controller';
 import { ActivityService } from './activity.service';
@@ -36,7 +35,7 @@ describe('ActivityController', () => {
     expect(controller).toBeDefined();
   });
 
-  it('should create a activity', async() => {
+  it('should create an activity', async() => {
 
     const dto = {
       title: 'title',
@@ -61,9 +60,25 @@ describe('ActivityController', () => {
       createdAt: new Date(Date.now())
     }
 
-    expect(await controller.createOneActivity(Res, dto)).toEqual({
-      id: expect.any(String),
+    expect(await controller.createOneActivity(dto)).toEqual({
+      id: expect.any(Number),
       title: dto.title,
+      price: dto.price,
+      img: dto.img,
+      destination: dto.destination,
+      type: dto.type,
+      sumary: dto.sumary,
+      duration: dto.duration,
+      cancelation: dto.cancelation,
+      instant_confirmation: dto.instant_confirmation,
+      mobile_ticket: dto.mobile_ticket,
+      pet_friendly: dto.pet_friendly,
+      experience_details: dto.experience_details,
+      includes: dto.includes,
+      location: dto.location,
+      reviews: dto.reviews,
+      children: dto.children,
+      createdAt: dto.createdAt
     });
 
     expect(mockActivityService.createNewActivity).toHaveBeenCalledWith(dto)
@@ -93,6 +108,6 @@ describe('ActivityController', () => {
       createdAt: new Date(Date.now())
     }
 
-    expect(await controller.updateOneActivity(Res, dto, '1'))
+    expect(await controller.updateOneActivity(dto, '1'))
   });
 });
