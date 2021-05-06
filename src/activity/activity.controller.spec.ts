@@ -81,7 +81,7 @@ describe('ActivityController', () => {
       createdAt: dto.createdAt
     });
 
-    expect(mockActivityService.createNewActivity).toHaveBeenCalledWith(dto)
+    expect(mockActivityService.createNewActivity).toHaveBeenCalled();
   });
 
   it('should update an activity', async() => {
@@ -108,6 +108,11 @@ describe('ActivityController', () => {
       createdAt: new Date(Date.now())
     }
 
-    expect(await controller.updateOneActivity(dto, '1'))
+    expect(await controller.updateOneActivity(dto, '1')).toEqual({
+      id: '1',
+      ...dto
+    });
+
+    expect(mockActivityService.updateOneActivity).toHaveBeenCalled();
   });
 });
