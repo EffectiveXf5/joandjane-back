@@ -5,22 +5,22 @@ export type ActivityDocument = Activity & Document;
 
 @Schema()
 export class Activity {
-    @Prop()
+    @Prop( { required: true } )
     title: string;
 
     @Prop()
     price: number;
 
-    @Prop()
+    @Prop( { required: true } )
     img: string[];
 
-    @Prop()
+    @Prop( { required: true } )
     destination: string[];
 
     @Prop()
     type: string[];
 
-    @Prop()
+    @Prop( { required: true } )
     sumary: string;
 
     @Prop()

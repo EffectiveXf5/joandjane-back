@@ -16,6 +16,8 @@ describe('ActivitiesService', () => {
     find: jest.fn().mockImplementation(),
 
     findById: jest.fn().mockImplementation( id => id ),
+
+    findByIdAndDelete: jest.fn().mockImplementation( id => id ),
     
   }
 
@@ -122,7 +124,7 @@ describe('ActivitiesService', () => {
     expect(mockActivityModel.find).toHaveBeenCalled();
   }); */
 
-  it('should get an unique article', async() => {
+  it('should get an unique activity', async() => {
     const id = '1';
 
     expect(await service.getOneActivity(id)).toBeTruthy();
@@ -130,8 +132,10 @@ describe('ActivitiesService', () => {
     expect(mockActivityModel.findById).toHaveBeenCalled();
   });
 
-  it('should delete an article', () => {
-    
+  it('should delete an activity', async() => {
+    expect(await service.deleteOneActivity('id')).toBeTruthy();
+
+    expect(mockActivityModel.findByIdAndDelete).toHaveBeenCalled();
   });
 });
 
