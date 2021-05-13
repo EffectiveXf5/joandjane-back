@@ -11,7 +11,12 @@ describe('DestinationController', () => {
         id: Date.now(),
         ...dto
       }
-    })
+    }),
+
+    updateNewDestination: jest.fn().mockImplementation((id, dto) => ({
+      id,
+      ...dto
+    })),
   }; 
 
   beforeEach(async () => {
@@ -20,9 +25,9 @@ describe('DestinationController', () => {
       providers: [DestinationService],
     })
     
-    .overrideProvider(DestinationService)
-    .useValue(mockDestinationService)
-    .compile();
+      .overrideProvider(DestinationService)
+      .useValue(mockDestinationService)
+      .compile();
 
     controller = module.get<DestinationController>(DestinationController);
   });
@@ -31,7 +36,7 @@ describe('DestinationController', () => {
     expect(controller).toBeDefined();
   });
 
-  it('should create a destination', () => {
+  it('should create a destination', async() => {
     const dto = {
       title: 'titlename',
       img: 'an image',
@@ -39,12 +44,28 @@ describe('DestinationController', () => {
       createdAt: new Date(Date.now())
     }
 
-    expect(controller.createOneDestination(dto)).toEqual({
+    expect(await controller.createOneDestination(dto)).toEqual({
        id: expect.any(Number),
        title: dto.title,
        img: dto.img,
        numberOfActivities: dto.numberOfActivities,
        createdAt: dto.createdAt
-    })
-  })
+    });
+    expect(mockDestinationService.createNewDestination).toHaveBeenCalled();
+  });
+
+  it('should update a destination', async() => {
+    const dto = {
+      title: 'titlename',
+      img: 'an image',
+      numberOfActivities: '20 activities',
+      createdAt: new Date(Date.now())
+    }
+
+    expect(await controller.updateDestination(dto, '1')).toEqual({
+      id: '1',
+      ...dto
+    });
+    expect(mockDestinationService.updateNewDestination).toHaveBeenCalled();
+  });
 });
