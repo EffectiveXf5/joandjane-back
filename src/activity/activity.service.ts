@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Activity } from './interfaces/activity.interface';
@@ -18,9 +18,9 @@ export class ActivityService {
         return oneActivity;
     }
 
-    createNewActivity(activityDTO: ActivityDTO): Promise<Activity> {
-        const newActivity = new this.activityModel(activityDTO);
-        return newActivity.save();
+    async createNewActivity(activityDTO: ActivityDTO): Promise<Activity> {
+        const newActivity = await this.activityModel.create(activityDTO);
+        return newActivity;
     }
 
     async updateOneActivity(activityID: string, activityDTO: ActivityDTO): Promise<Activity> {
