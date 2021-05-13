@@ -1,4 +1,4 @@
-export class blogDTO {
+export class BlogDTO {
 
     readonly author: string;
 
