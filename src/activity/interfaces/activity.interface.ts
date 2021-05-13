@@ -34,5 +34,5 @@ export interface Activity extends Document {
 
     readonly children: boolean;
 
-    readonly reatedAt: Date;
+    readonly createdAt: Date;
 }
