@@ -3,9 +3,7 @@ export class ActivityDTO {
 
     readonly title: string;
 
-    readonly price: number;
-
-    readonly img: string[];
+    readonly price: string;
 
     readonly destination: string[];
 
@@ -17,7 +15,7 @@ export class ActivityDTO {
 
     readonly cancelation: string;
     
-    readonly instant_confirmation: boolean;
+    readonly instant_confirmation: string;
 
     readonly mobile_ticket: boolean;
 
@@ -28,6 +26,8 @@ export class ActivityDTO {
     readonly includes: string[];
     
     readonly location: string[]; 
+
+    readonly prepare_experience: string;
 
     readonly reviews: object;
 

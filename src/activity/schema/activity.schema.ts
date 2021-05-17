@@ -9,10 +9,7 @@ export class Activity {
     title: string;
 
     @Prop()
-    price: number;
-
-    @Prop( { required: true } )
-    img: string[];
+    price: string;
 
     @Prop( { required: true } )
     destination: string[];
@@ -30,7 +27,7 @@ export class Activity {
     cancelation: string;
     
     @Prop()
-    instant_confirmation: boolean;
+    instant_confirmation: string;
 
     @Prop()
     mobile_ticket: boolean;
@@ -46,6 +43,9 @@ export class Activity {
     
     @Prop()
     location: string[];
+
+    @Prop()
+    prepare_experience: string;
     
     @Prop( { type: Object } )
     reviews: object;

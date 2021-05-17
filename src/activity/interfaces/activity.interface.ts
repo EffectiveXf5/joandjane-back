@@ -4,9 +4,7 @@ export interface Activity extends Document {
 
     readonly title: string;
 
-    readonly price: number;
-
-    readonly img: string[];
+    readonly price: string;
 
     readonly destination: string[];
 
@@ -18,7 +16,7 @@ export interface Activity extends Document {
 
     readonly cancelation: string;
     
-    readonly instant_confirmation: boolean;
+    readonly instant_confirmation: string;
 
     readonly mobile_ticket: boolean;
 
@@ -29,6 +27,8 @@ export interface Activity extends Document {
     readonly includes: string[];
     
     readonly location: string[]; 
+
+    readonly prepare_experience: string;
 
     readonly reviews: object;
 
