@@ -11,6 +11,9 @@ export class Activity {
     @Prop()
     price: string;
 
+    @Prop()
+    img: string[];
+
     @Prop( { required: true } )
     destination: string[];
 

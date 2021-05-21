@@ -6,6 +6,8 @@ export interface Activity extends Document {
 
     readonly price: string;
 
+    readonly img: string[];
+
     readonly destination: string[];
 
     readonly type: string[];
