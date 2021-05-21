@@ -5,7 +5,7 @@ export class ActivityDTO {
 
     readonly price: string;
 
-    readonly img: string[];
+    readonly img: string;
 
     readonly destination: string[];
 
