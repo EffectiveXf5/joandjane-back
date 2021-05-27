@@ -39,19 +39,20 @@ describe('ActivityController', () => {
 
     const dto = {
       title: 'title',
-      price: 12,
-      img: ['img1', 'img2'],
+      price: "12",
+      img: 'img1',
       destination: ['destination', 'destination'],
       type: ['type', 'type'],
       sumary: 'sumary',
       duration: 'duration',
       cancelation: 'cancelation',
-      instant_confirmation: true,
+      instant_confirmation: "true",
       mobile_ticket: true,
       pet_friendly: true,
       experience_details: 'experience',
       includes: ['includes', 'includes'],
       location: ['location', 'location'],
+      prepare_experience: "prepare",
       reviews: {
         1: 'review1',
         2: 'review2'
@@ -76,6 +77,7 @@ describe('ActivityController', () => {
       experience_details: dto.experience_details,
       includes: dto.includes,
       location: dto.location,
+      prepare_experience: dto.prepare_experience,
       reviews: dto.reviews,
       children: dto.children,
       createdAt: dto.createdAt
@@ -87,19 +89,20 @@ describe('ActivityController', () => {
   it('should update an activity', async() => {
     const dto = {
       title: 'title',
-      price: 12,
-      img: ['img1', 'img2'],
+      price: "12",
+      img: 'img1',
       destination: ['destination', 'destination'],
       type: ['type', 'type'],
       sumary: 'sumary',
       duration: 'duration',
       cancelation: 'cancelation',
-      instant_confirmation: true,
+      instant_confirmation: "true",
       mobile_ticket: true,
       pet_friendly: true,
       experience_details: 'experience',
       includes: ['includes', 'includes'],
       location: ['location', 'location'],
+      prepare_experience: "prepare",
       reviews: {
         1: 'review1',
         2: 'review2'
