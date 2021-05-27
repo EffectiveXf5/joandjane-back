@@ -8,7 +8,7 @@ export interface Blog extends Document {
 
     readonly title: string;
 
-    readonly img: string[];
+    readonly img: string;
 
     readonly description: string;
 

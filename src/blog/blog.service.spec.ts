@@ -39,7 +39,7 @@ describe('BlogService', () => {
       author: 'author',
       reading_time: '14 horas',
       title: 'title',
-      img: ['img', 'img2'],
+      img: 'img',
       description: 'description',
       createdAt: new Date(Date.now())
     }
@@ -61,7 +61,7 @@ describe('BlogService', () => {
       author: 'authorNew',
       reading_time: '14 horas new',
       title: 'title new',
-      img: ['img', 'img2'],
+      img: 'img',
       description: 'description',
       createdAt: new Date(Date.now())
     }

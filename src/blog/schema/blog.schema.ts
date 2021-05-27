@@ -15,7 +15,7 @@ export class Blog {
     title: string;
 
     @Prop()
-    img: string[];
+    img: string;
 
     @Prop()
     description: string;

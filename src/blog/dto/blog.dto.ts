@@ -6,7 +6,7 @@ export class BlogDTO {
 
     readonly title: string;
 
-    readonly img: string[];
+    readonly img: string;
 
     readonly description: string;
 
